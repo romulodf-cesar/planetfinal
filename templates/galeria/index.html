@@ -4,7 +4,7 @@
 
     <div class="pagina-inicial">
         <header class="cabecalho">
-            <img src="{% static '/assets/logo/planet.png' %}" alt="Logo da Planet" />
+            <img src="{% static '/assets/logo/castelo.png' %}" alt="Logo da Planet" />
             <div class="cabecalho__busca">
                 <div class="busca__fundo">
                     <input class="busca__input" type="text" placeholder="O que você procura?">
@@ -39,9 +39,10 @@
                     <div class="cards">
                         <h2 class="cards__titulo">Navegue pela galeria</h2>
                         <ul class="cards__lista">
+                            <!-- Comentario HTML-->
                             {% for fotografia in cards %}
                             <li class="card">
-                                <a href="{% url 'imagem' %}">
+                                <a href="{% url 'imagem' fotografia.id %}">
                                     <img class="card__imagem" src="{% static '/assets/imagens/galeria/'%}{{fotografia.foto}}" alt="foto">
                                 </a>
                                 <span class="card__tag">Estrelas</span>
